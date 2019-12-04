@@ -1,3 +1,35 @@
-nav {
+body {
+    margin: 0px;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+/* main navigation menu */
+.nav-header-main {
     background: rgb(58, 58, 58);
+}
+
+.nav-header-main ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.nav-header-main li {
+    float: left;
+}
+
+.nav-header-main a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 20px 20px;
+}
+
+.nav-header-main a:hover {
+    background-color: black;
 }

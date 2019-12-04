@@ -10,9 +10,14 @@
 </head>
 <body>
     <header>
-        <nav>
-            <a href="#">
-                <img src="img/RedHornetLogo.png" alt="Red Hornet Logo" height="100px">
-            </a>
+        <nav class="nav-header-main">         
+            <ul class="clearfix">
+                <li style="margin: 6px"><a href="#" style="padding: 0px; background-color: rgb(58, 58, 58);">
+                    <img src="img/RedHornetLogo.png" alt="Red Hornet Logo" height="40px"></a></li>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">PORTFOLIO</a></li>
+                <li><a href="#">ABOUT ME</a></li>
+                <li><a href="#">CONTACT</a></li>
+            </ul>
         </nav>
     </header>
