@@ -10,8 +10,8 @@
 </head>
 <body>
     <header>
-        <nav class="nav-header-main">         
-            <ul class="clearfix">
+        <nav class="nav-header-main clearfix">         
+            <ul>
                 <li style="margin: 6px"><a href="#" style="padding: 0px; background-color: rgb(58, 58, 58);">
                     <img src="img/RedHornetLogo.png" alt="Red Hornet Logo" height="40px"></a></li>
                 <li><a href="#">HOME</a></li>
@@ -19,5 +19,13 @@
                 <li><a href="#">ABOUT ME</a></li>
                 <li><a href="#">CONTACT</a></li>
             </ul>
+            <div>
+                <form action="includes/login.inc.php" method="POST">
+                    <input type="text" name="mailuid" placeholder="Username/E-mail...">
+                    <input type="password" name="pwd" placeholder="Password...">
+                    <button type="submit" name="login-submit">LOGIN</button>
+                    <button type="button">SIGN UP</button>
+                </form>
+            </div>
         </nav>
     </header>

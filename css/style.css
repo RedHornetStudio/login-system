@@ -33,3 +33,31 @@ body {
 .nav-header-main a:hover {
     background-color: black;
 }
+
+.nav-header-main div {
+    float: right;
+    margin: 0px;
+}
+
+.nav-header-main input {
+    margin: 18px 10px;
+    font-size: 12px;
+    border-radius: 10px;
+    border: none;
+    padding: 3px;
+    background: rgb(206, 206, 206);
+}
+
+.nav-header-main button {
+    margin-right: 10px;
+    background: #910505;
+    border: none;
+    padding: 8px;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.nav-header-main button:active {
+    background: #5e0303;
+}
