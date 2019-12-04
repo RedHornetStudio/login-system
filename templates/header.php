@@ -26,6 +26,9 @@
                     <button type="submit" name="login-submit">LOGIN</button>
                     <button type="button">SIGN UP</button>
                 </form>
+                <form action="includes/logout.inc.php" method="POST">
+                    <button type="submit" name="logout-submit" style="display: none;"></button>
+                </form>
             </div>
         </nav>
     </header>
