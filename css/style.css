@@ -12,6 +12,19 @@ body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+button {
+    background: #910505;
+    border: none;
+    padding: 8px;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:active {
+    background: #5e0303;
+}
+
 main {
     height: 600px;
     overflow: hidden;
@@ -61,20 +74,11 @@ main {
 
 .nav-header-main button {
     margin-right: 10px;
-    background: #910505;
-    border: none;
-    padding: 8px;
-    color: white;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.nav-header-main button:active {
-    background: #5e0303;
 }
 
 /* main section */
 .main-section {
+    overflow: hidden;
     max-width: 800px;
     background: rgb(187, 187, 187);
     margin: auto;
@@ -83,4 +87,32 @@ main {
 
 .main-section p {
     text-align: center;
+}
+
+/* signup section */
+.signup-section {
+    overflow: hidden;
+    max-width: 800px;
+    background: rgb(187, 187, 187);
+    margin: auto;
+    margin-top: 30px;
+}
+
+.signup-section h1 {
+    text-align: center;
+}
+
+.signup-section input {
+    display: block;
+    border: none;
+    border-radius: 10px;
+    margin: 10px auto;
+    font-size: 20px;
+    padding: 3px 10px;
+}
+
+.signup-section button {
+    display: block;
+    margin: 10px auto;
+    padding: 8px 20px;
 }
