@@ -2,17 +2,18 @@
 
 if(isset($_POST['signup-submit'])) {
 
+    echo $_POST['signup-submit'] . '<br>';
+    echo $_POST['uid'] . '<br>';
+    echo $_POST['mail'] . '<br>';
+    echo $_POST['pwd'] . '<br>';
+    echo $_POST['pwd-repeat'] . '<br>';
     require('dataBaseHandler.inc.php');
+    $dbh = new Dbh;
+    $pdo = $dbh->connect();
 
-    $userName = trim($_POST['uid']);
-    $email = trim($_POST['mail']);
-    $password = trim($_POST['pwd']);
-    $passwordRepeat = trim($_POST['pwd-repeat']);
-
-    if(empty($userName) || empty($email) || empty($password) || empty($passwordRepeat)) {
+    if($pdo) {
 
     }
-
 }
 
 ?>

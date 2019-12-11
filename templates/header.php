@@ -25,7 +25,7 @@
                     <input type="text" name="mailuid" placeholder="Username/E-mail...">
                     <input type="password" name="pwd" placeholder="Password...">
                     <button type="submit" name="login-submit">LOGIN</button>
-                    <button type="button" onclick="signup()">SIGN UP</button>
+                    <button type="button" onclick="moveToSignupPage()">SIGN UP</button>
                 </form>
                 <form action="includes/logout.inc.php" method="POST" style="display: none;">
                     <button type="submit" name="logout-submit"></button>
