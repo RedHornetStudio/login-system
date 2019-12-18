@@ -6,12 +6,14 @@ class Dbh {
     private $username;
     private $password;
     private $dbname;
+    public $connError;
 
     public function connect() {
         $this->hostname = "localhost";
         $this->username = "root";
         $this->password = "";
         $this->dbname = "loginsystemtut";
+        $this->connError = "";
 
         try {
             $dsn = "mysql:host=" . $this->hostname . ";dbname=" . $this->dbname;
@@ -19,7 +21,7 @@ class Dbh {
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return $pdo;
         } catch (PDOException $e) {
-            echo "Connection failed: " . $e;
+            $this->connError = "Connection failed: " . $e;
             return null;
         }
     }
