@@ -58,7 +58,7 @@ if(isset($_POST['signup-submit'])) {
 
             try {
                 $sql = 'INSERT INTO users (userNameUsers, emailUsers, pwdUsers) VALUES (:userNameUsers, :emailUsers, :pwdUsers)';
-                $stmt = $pdo->prepare($sql);
+                $stmt = $conn->prepare($sql);
                 $stmt->execute(['userNameUsers' => $userNameUsers, 'emailUsers' => $emailUsers, 'pwdUsers' => $hashedPwd]);
             } catch (PDOException $e) {
                 $errors['query'] = 'Query error: ' . $e;

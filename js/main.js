@@ -15,6 +15,7 @@ function signup() {
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             var errors = JSON.parse(this.responseText);
+            console.log(this.responseText);
 
             if(errors.username != '' || errors.email != '' || errors.password != '' || errors.repeatPassword != '') {
                 uidError.textContent = errors.username;
@@ -57,8 +58,10 @@ function login() {
                 alert(errors.password);
             } else if(errors.connection != '' || errors.query != '') {
                 alert(errors.connection + errors.query);
+            } else if(errors.login != '') {
+                alert(errors.login);
             } else {
-                // location.href = "index.php"
+                location.href = "index.php"
             }
             
         }

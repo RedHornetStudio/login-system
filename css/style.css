@@ -64,7 +64,7 @@ main {
 }
 
 .nav-header-main input {
-    margin: 18px 10px;
+    margin: 0px 10px;
     font-size: 12px;
     border-radius: 10px;
     border: none;
@@ -73,6 +73,7 @@ main {
 }
 
 .nav-header-main button {
+    margin-top: 12px;
     margin-right: 10px;
 }
 
