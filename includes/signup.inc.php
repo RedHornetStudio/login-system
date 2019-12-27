@@ -47,28 +47,28 @@ if(isset($_POST['signup-submit'])) {
         }
     }
 
-    if($isError) {
-        $errorsJSON = json_encode($errors);
-        echo $errorsJSON;
-    } else {
+    if(!$isError) {
         // if no errors in input fields connect to database and check for connection and query errors
         $dbh = new Dbh;
-        $pdo = $dbh->connect();
+        $conn = $dbh->connect();
         $errors['connection'] = $dbh->connError;
 
-        if($pdo && !$isError) {
+        if($conn) {
+            $hashedPwd = password_hash($pwdUsers, PASSWORD_DEFAULT);
+
             try {
                 $sql = 'INSERT INTO users (userNameUsers, emailUsers, pwdUsers) VALUES (:userNameUsers, :emailUsers, :pwdUsers)';
                 $stmt = $pdo->prepare($sql);
-                $stmt->execute(['userNameUsers' => $userNameUsers, 'emailUsers' => $emailUsers, 'pwdUsers' => $pwdUsers]);
+                $stmt->execute(['userNameUsers' => $userNameUsers, 'emailUsers' => $emailUsers, 'pwdUsers' => $hashedPwd]);
             } catch (PDOException $e) {
                 $errors['query'] = 'Query error: ' . $e;
             }
         }
-
-        $errorsJSON = json_encode($errors);
-        echo $errorsJSON;
+        $conn = null;
     }
+
+    $errorsJSON = json_encode($errors);
+    echo $errorsJSON;
 }
 
 ?>

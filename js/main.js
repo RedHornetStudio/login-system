@@ -35,3 +35,35 @@ function signup() {
     pwd.value = '';
     pwdRepeat.value = '';
 }
+
+function login() {
+    var uid = document.getElementById('mailuid');
+    var pwd = document.getElementById('pwdLogin');
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var errors = JSON.parse(this.responseText);
+
+            uid.value = '';
+            pwd.value = '';
+
+            console.log(this.responseText);
+
+            if(errors.username != '' && errors.password != '') {
+                alert(errors.username + '\n' + errors.password)
+            } else if(errors.username != '') {
+                alert(errors.username);
+            } else if(errors.password != '') {
+                alert(errors.password);
+            } else if(errors.connection != '' || errors.query != '') {
+                alert(errors.connection + errors.query);
+            } else {
+                // location.href = "index.php"
+            }
+            
+        }
+    };
+    xhttp.open("POST", "includes/login.inc.php", true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send('login-submit=yes&mailuid=' + uid.value + '&pwd=' + pwd.value);
+}

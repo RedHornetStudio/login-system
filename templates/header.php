@@ -22,9 +22,9 @@
             </ul>
             <div>
                 <form action="includes/login.inc.php" method="POST">
-                    <input type="text" name="mailuid" placeholder="Username/E-mail...">
-                    <input type="password" name="pwd" placeholder="Password...">
-                    <button type="submit" name="login-submit">LOGIN</button>
+                    <input type="text" name="mailuid" id="mailuid" placeholder="Username/E-mail...">
+                    <input type="password" name="pwd" id="pwdLogin" placeholder="Password...">
+                    <button type="button" onclick="login()">LOGIN</button>
                     <button type="button" onclick="moveToSignupPage()">SIGN UP</button>
                 </form>
                 <form action="includes/logout.inc.php" method="POST" style="display: none;">
