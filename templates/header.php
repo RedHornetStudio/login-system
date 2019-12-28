@@ -13,7 +13,7 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/main.js"></script>
-    <title>Document</title>
+    <title>Login system</title>
 </head>
 <body>
     <header>
@@ -30,13 +30,13 @@ session_start();
                 <form action="includes/login.inc.php" method="POST">
                     <?php if(isset($_SESSION['userId'])) { ?>
                             <span style="color: white; margin-right: 15px;"><?php echo $_SESSION['userName']; ?></span>
-                            <button type="button" onclick="login()">LOGOUT</button>
+                            <button type="button" onclick="logout()">LOGOUT</button>
                     <?php } else { ?>
                             <input type="text" name="mailuid" id="mailuid" placeholder="Username/E-mail...">
                             <input type="password" name="pwd" id="pwdLogin" placeholder="Password...">
-                            <button type="button" onclick="login()">LOGIN</button>';
+                            <button type="button" onclick="login()">LOGIN</button>
+                            <button id="signup" type="button" onclick="moveToSignupPage()">SIGN UP</button>
                     <?php } ?>
-                    <button type="button" onclick="moveToSignupPage()">SIGN UP</button>
                 </form>
                 <form action="includes/logout.inc.php" method="POST" style="display: none;">
                     <button type="submit" name="logout-submit"></button>

@@ -1,5 +1,7 @@
 <?php
+
     require('templates/header.php');
+    
 ?>
 
     <main>
